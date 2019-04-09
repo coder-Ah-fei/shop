@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop/MainPage.dart';
 import 'package:shop/indexPage/indexPage.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return new MaterialApp(
 //        title: 'Welcome to Flutter',
         home: new MainPageWidget()
@@ -24,19 +24,27 @@ class MainPageWidget extends StatefulWidget{
 class MainPageState extends State<MainPageWidget>{
 
   int _selectedIndex = 0;
-  final _widgetOptions = [
+  List<Widget> pages = List<Widget>();
+  /*final _widgetOptions = [
     IndexPage(),
     MainPage(),
     MainPage(),
     MainPage(),
-  ];
+  ];*/
+
+  @override
+  void initState(){
+    pages
+      ..add(IndexPage())
+      ..add(MainPage());
+  }
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: pages[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

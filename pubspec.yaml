@@ -31,6 +31,8 @@ dependencies:
   dio: ^2.1.0
   #生成json对应类插件
   json_annotation: ^2.0.0
+  #屏幕自适应插件
+  flutter_screenutil: ^0.5.1
 
 dev_dependencies:
   flutter_test:
